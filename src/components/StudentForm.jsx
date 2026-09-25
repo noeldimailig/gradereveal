@@ -12,7 +12,6 @@ const studentSchema = z.object({
 });
 
 export default function StudentForm({ onSearch, MAX_VIEWS, isLoading = false }) {
-  const [viewsCount, setViewsCount] = useState(0)
   const {
     register,
     handleSubmit,
@@ -26,7 +25,6 @@ export default function StudentForm({ onSearch, MAX_VIEWS, isLoading = false }) 
 
   const onSubmit = (data) => {
     onSearch(data.studentId);
-    setViewsCount((prev) => prev + 1)
   };
 
   return (

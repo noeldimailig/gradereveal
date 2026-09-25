@@ -1,9 +1,8 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { REVEAL_MEDIA, getCategory } from "@/lib/grades";
 
 export default function RevealPanel({ student }) {
-  const [mediaMissing, setMediaMissing] = useState(false);
   const videoRef = useRef(null);
   const category = getCategory(student);
 
@@ -59,7 +58,6 @@ export default function RevealPanel({ student }) {
           src={REVEAL_MEDIA[category]}
           playsInline
           controls
-          onError={() => setMediaMissing(true)}
         />
       </motion.div>
     </motion.section>
