@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { REVEAL_MEDIA, getCategory } from "@/lib/grades";
-import MediaFallback from "./MediaFallback";
 
 export default function RevealPanel({ student }) {
   const [mediaMissing, setMediaMissing] = useState(false);
@@ -55,24 +54,13 @@ export default function RevealPanel({ student }) {
         }}
         style={{ marginTop: "1.25rem" }}
       >
-        {!mediaMissing ? (
-          <video
-            ref={videoRef}
-            src={REVEAL_MEDIA[category]}
-            playsInline
-            controls
-            onError={() => setMediaMissing(true)}
-          />
-        ) : (
-          <MediaFallback
-            label={
-              student.numerical_equivalent === 5
-                ? "F IN THE CHAT"
-                : "LET HIM COOK"
-            }
-            note="Optional: add a reaction video to public/media/post-reveal/."
-          />
-        )}
+        <video
+          ref={videoRef}
+          src={REVEAL_MEDIA[category]}
+          playsInline
+          controls
+          onError={() => setMediaMissing(true)}
+        />
       </motion.div>
     </motion.section>
   );
