@@ -1,0 +1,471 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #07070a;
+  color: #f6f4ef;
+  font-family: Inter, system-ui, sans-serif;
+  min-height: 100vh;
+}
+.app {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at 50% 35%,
+    #17151f 0,
+    #09090c 42%,
+    #050507 100%
+  );
+  padding: 28px 6vw;
+  display: flex;
+  flex-direction: column;
+}
+.glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.16;
+  pointer-events: none;
+}
+.g1 {
+  background: #7c3aed;
+  top: -180px;
+  left: -150px;
+}
+.g2 {
+  background: #ef4444;
+  right: -180px;
+  bottom: -220px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.logo {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #393642;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-family: "Space Mono";
+  font-weight: 700;
+  color: #b9a7ff;
+  background: #121019;
+}
+.brand b {
+  display: block;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+.brand span {
+  font-size: 11px;
+  color: #777581;
+}
+.badge {
+  font: 700 11px "Space Mono";
+  border: 1px solid #2b2931;
+  padding: 9px 12px;
+  border-radius: 99px;
+  color: #aaa5b3;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.panel {
+  width: min(780px, 100%);
+  margin: auto;
+  padding: 55px 30px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.eyebrow {
+  font: 700 11px "Space Mono";
+  letter-spacing: 0.18em;
+  color: #8d8798;
+  margin-bottom: 18px;
+}
+.panel h1 {
+  font-size: clamp(48px, 8vw, 86px);
+  line-height: 0.94;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+}
+.panel h1 em {
+  font-style: normal;
+  color: #a78bfa;
+}
+.sub {
+  max-width: 550px;
+  margin: 24px auto 30px;
+  color: #9995a2;
+  line-height: 1.6;
+}
+.lookup {
+  display: flex;
+  gap: 10px;
+  max-width: 600px;
+  margin: auto;
+}
+.inputWrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #111116;
+  border: 1px solid #302d37;
+  border-radius: 14px;
+  padding: 0 16px;
+}
+.inputWrap:focus-within {
+  border-color: #8065db;
+  box-shadow: 0 0 0 4px #7c3aed16;
+}
+.inputWrap input {
+  width: 100%;
+  height: 54px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  font: 600 14px "Space Mono";
+  text-transform: uppercase;
+}
+.lookup button,
+.primary,
+.secondary {
+  border: 0;
+  border-radius: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.lookup button {
+  background: #f4f1e9;
+  color: #111;
+  padding: 0 24px;
+}
+.error {
+  margin: 14px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  align-items: center;
+  color: #fb7185;
+  font-size: 13px;
+}
+.privacy {
+  margin-top: 25px;
+  color: #5e5b65;
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  align-items: center;
+}
+.verified {
+  display: inline-block;
+  padding: 7px 11px;
+  border-radius: 99px;
+  background: #12351f;
+  color: #6ee7a0;
+  font: 700 11px "Space Mono";
+  margin-bottom: 20px;
+}
+.panel h2 {
+  font-size: clamp(28px, 5vw, 48px);
+  margin: 8px 0;
+  letter-spacing: -0.04em;
+}
+.center > p {
+  color: #87838e;
+}
+.redacted {
+  margin: 32px auto;
+  max-width: 470px;
+  padding: 20px;
+  background: #0e0e13;
+  border: 1px solid #25232b;
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 10px;
+  text-align: left;
+  font-size: 12px;
+}
+.redacted span {
+  color: #62606a;
+  font-family: "Space Mono";
+}
+.redacted b {
+  font-size: 12px;
+}
+.warningText {
+  font-size: 13px !important;
+  color: #aaa5b1 !important;
+}
+.primary {
+  padding: 14px 22px;
+  background: #a78bfa;
+  color: #100c18;
+  margin-top: 10px;
+}
+.memePanel h2 {
+  margin-bottom: 25px;
+}
+.videoBox {
+  width: min(680px, 100%);
+  aspect-ratio: 16/9;
+  background: #050507;
+  border: 1px solid #292630;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+.videoBox video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.videoFallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #111017;
+  gap: 9px;
+}
+.videoFallback span {
+  font-size: 50px;
+}
+.videoFallback small {
+  color: #777;
+}
+.videoFallback button {
+  margin-top: 12px;
+  padding: 9px 13px;
+  border-radius: 10px;
+  border: 1px solid #3b3743;
+  background: #1a1820;
+  color: white;
+}
+.hint {
+  color: #5f5b67;
+  font-size: 11px;
+}
+.result .studentName {
+  color: #918c98;
+  margin: 0 0 12px;
+}
+.grade {
+  font-size: clamp(100px, 23vw, 190px);
+  font-weight: 900;
+  letter-spacing: -0.09em;
+  line-height: 0.95;
+  margin: 12px 0;
+}
+.result.pass .grade,
+.result.excellent .grade,
+.result.honors .grade {
+  color: #a78bfa;
+}
+.result.fail .grade {
+  color: #fb7185;
+}
+.raw {
+  font: 12px "Space Mono";
+  color: #77727f;
+}
+.result h2 {
+  font-size: clamp(24px, 4vw, 38px);
+  margin: 22px 0 8px;
+}
+.result p:not(.studentName) {
+  color: #88838f;
+}
+.secondary {
+  margin-top: 20px;
+  padding: 12px 18px;
+  background: #16151b;
+  color: #eee;
+  border: 1px solid #2e2b35;
+}
+.confetti {
+  color: #a78bfa;
+  font-size: 22px;
+}
+.fail .confetti {
+  color: #fb7185;
+}
+footer {
+  text-align: center;
+  color: #3e3b44;
+  font: 9px "Space Mono";
+  letter-spacing: 0.12em;
+  position: relative;
+  z-index: 2;
+  padding: 12px;
+}
+@media (max-width: 600px) {
+  .app {
+    padding: 20px;
+  }
+  .badge {
+    display: none;
+  }
+  .lookup {
+    flex-direction: column;
+  }
+  .lookup button {
+    height: 52px;
+  }
+  .panel {
+    padding: 35px 5px;
+  }
+  .redacted {
+    grid-template-columns: 85px 1fr;
+  }
+  .videoBox {
+    border-radius: 15px;
+  }
+}
+
+/* v2 prank/reaction states */
+.prankHint {
+  display: inline-block;
+  margin: 6px 0 0;
+  padding: 8px 12px;
+  border: 1px solid #4b3510;
+  background: #21170a;
+  color: #fbbf24;
+  border-radius: 999px;
+  font: 700 10px "Space Mono";
+  letter-spacing: 0.04em;
+}
+.fakeFail .fakeGrade {
+  font-size: clamp(110px, 25vw, 210px);
+  font-weight: 900;
+  letter-spacing: -0.1em;
+  line-height: 0.9;
+  color: #fb7185;
+}
+.fakeFail h2 {
+  color: #fb7185;
+  font-size: 42px;
+}
+.fakeFail p {
+  color: #aaa5b1;
+}
+.fakeStamp {
+  display: inline-block;
+  border: 3px solid #fb7185;
+  color: #fb7185;
+  padding: 8px 16px;
+  font: 900 14px "Space Mono";
+  letter-spacing: 0.12em;
+  margin: 15px 0;
+}
+.fakeFail.fail .fakeGrade,
+.fakeFail.fail h2 {
+  color: #ff4d4d;
+} /* red */
+.fakeFail.warning .fakeGrade,
+.fakeFail.warning h2 {
+  color: #ffb020;
+} /* amber */
+.fakeFail.lowpass .fakeGrade,
+.fakeFail.lowpass h2 {
+  color: #ffd93d;
+} /* yellow */
+
+.fakeFail.fail .fakeStamp {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+.fakeFail.warning .fakeStamp {
+  border-color: #ffb020;
+  color: #ffb020;
+}
+.fakeFail.lowpass .fakeStamp {
+  border-color: #ffd93d;
+  color: #ffd93d;
+}
+.prankSub {
+  font-size: 14px !important;
+  color: #fbbf24 !important;
+}
+.prankVideo {
+  box-shadow: 0 0 60px #ef444426;
+}
+.prankReveal h1 {
+  font-size: clamp(54px, 9vw, 100px);
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+  margin: 18px 0;
+}
+.prankReveal h1 em {
+  font-style: normal;
+  color: #fbbf24;
+}
+.rickText {
+  font: 900 18px "Space Mono";
+  color: #fbbf24;
+}
+.postReveal h2 {
+  margin-bottom: 22px;
+}
+.mediaFallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #111017;
+  gap: 10px;
+  padding: 20px;
+}
+.mediaFallback b {
+  font-size: 18px;
+}
+.mediaFallback small {
+  color: #777;
+  max-width: 420px;
+  line-height: 1.5;
+}
+.mediaFallback button {
+  margin-top: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #3b3743;
+  background: #1a1820;
+  color: white;
+  cursor: pointer;
+}
+.postReveal .videoBox {
+  margin-bottom: 16px;
+}
+.postReveal audio {
+  display: none;
+}
